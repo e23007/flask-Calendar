@@ -1,0 +1,57 @@
+{% extends 'base.html' %}{% block title %}edit {{ super() }}{% endblock %} {%
+block content %}
+<div class="container offset-lg-2 mt-5">
+  <div class="row mt-4 offset-lg-1 offset-md-3">
+    <div class="col-lg-5 col-sm-10">
+      <h1>編集</h1>
+    </div>
+  </div>
+  <form method="POST">
+    <div class="row mt-4 offset-lg-1 offset-md-3">
+      <div class="col-lg-5 col-sm-10">
+        <textarea
+          type="text"
+          cols="60"
+          rows="1"
+          wrap="hard"
+          placeholder="タイトル"
+          name="title"
+          maxlength="50"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row mt-4 offset-lg-1 offset-md-3">
+      <div class="col-lg-5 col-sm-10">
+        <p>タイトルを決めてください</p>
+      </div>
+    </div>
+    <div class="row mt-4 offset-lg-1 offset-md-3">
+      <div class="col-lg-5 col-sm-10">
+        <textarea
+          cols="60"
+          rows="5"
+          wrap="hard"
+          placeholder="内容"
+          name="body"
+          maxlength="300"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row mt-4 offset-lg-1 offset-md-3">
+      <div class="col-lg-5 col-sm-10">
+        <p>300文字以内で作成可能です</p>
+      </div>
+    </div>
+    <div class="row mt-4 offset-lg-1 offset-md-3">
+      <div class="col-lg-5 col-sm-10">
+        <button
+          class="btn btn-primary w-xl-25 w-sm-100 w-md-50 py-2"
+          type="submit"
+        >
+          完了
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

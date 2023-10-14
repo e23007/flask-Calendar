@@ -1,0 +1,29 @@
+{% extends 'base.html' %}{% block title %}WelCome {{ super() }}{% endblock %} {%
+block content %}
+<div class="row">
+  <div class="col-lg-2 col-sm-5">
+    <h1 class="text-center">メモ</h1>
+  </div>
+  <div class="col-lg-8 col-sm-7">
+    <h1 class="bg-black text-white text-center">Calendar</h1>
+  </div>
+  <div class="col bg-info">
+    <a href="/login" role="button">Log in</a>
+  </div>
+  <div class="col bg-light">
+    <a href="/signup" role="button">Sign up</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <h2 class="text-center">
+      ログインをするとメモ機能を使えるようになります モバイルでは使用は困難です
+    </h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col offset-lg-3 front">
+    {{ cln.formatmonth(year, month) | safe }}
+  </div>
+</div>
+{% endblock %}

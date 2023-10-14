@@ -1,0 +1,49 @@
+/* frontカレンダー */
+.sat {
+  color: blue;
+}
+.sun {
+  color: red;
+}
+
+table td .month {
+  font-size: xx-large;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+table,
+table th,
+table td {
+  table-layout: fixed;
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+
+@media (min-width: 768px) {
+  .month {
+    font-size: xx-large;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* メモ機能 */
+.scroll {
+  height: 550px;
+  overflow: auto;
+}
+.memoarea {
+  inline-size: auto;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+.bor {
+  border-bottom: 2px dashed;
+}
+/* フォント */
+h1,
+h2 {
+  font-family: Montserrat;
+}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %} {% block title %}Signup {{ super() }} {%endblock %} {%
+block content %}
+<div class="container offset-lg-4 mt-5">
+  <div class="row mt-4 offset-lg-1 offset-md-3">
+    <div class="col-lg-5 col-sm-10">
+      <h1>ログイン</h1>
+    </div>
+  </div>
+  {% with messages=get_flashed_messages() %} {% if messages %} {% for message in
+  messages %}
+  <div class="row offset-lg-1 offset-md-3">
+    <div class="col-lg-5 col-sm-10">
+      <p class="text-danger">{{ message }}</p>
+    </div>
+  </div>
+  {% endfor %} {% endif %} {% endwith %}
+  <form method="POST">
+    <div class="row offset-lg-1 offset-md-3">
+      <div class="col-md-3 col-sm-10">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="ユーザー名"
+            name="username"
+            maxlength="15"
+          />
+          <label for="floatingInput"></label>
+        </div>
+      </div>
+    </div>
+    <div class="row offset-lg-1 offset-md-3">
+      <div class="col-lg-5 col-sm-10">
+        <p>既存のユーザー名を記入してください</p>
+      </div>
+    </div>
+    <div class="row offset-lg-1 offset-md-3">
+      <div class="col-md-3 col-sm-10">
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="パスワード"
+            name="password"
+            maxlength="15"
+          />
+          <label for="floatingPassword"></label>
+        </div>
+      </div>
+    </div>
+    <div class="row offset-lg-1 offset-md-3">
+      <div class="col-lg-5 col-sm-10">
+        <p>パスワードを入力してください</p>
+      </div>
+    </div>
+    <div class="row offset-lg-1 offset-md-3">
+      <div class="col-md-6 col-sm-10">
+        <button
+          class="btn btn-primary w-xl-25 w-sm-100 w-md-50 py-2"
+          type="submit"
+        >
+          ログイン
+        </button>
+      </div>
+    </div>
+    <div class="row offset-lg-1 offset-md-3">
+      <div class="col-lg-5 col-sm-10">
+        <p class="mt-2">
+          アカウントを所持していない方は<a href="/signup" role="button"
+            >こちら</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="row offset-lg-1 offset-md-3">
+      <div class="col-lg5-3 col-sm-10">
+        <p>ホームページに<a href="/" role="button">戻る</a></p>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

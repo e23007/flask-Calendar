@@ -1,0 +1,47 @@
+{% extends 'base.html' %}{% block title %}Calendar {{ super() }}{% endblock %}
+{% block content %}
+<div class="row text-center mt-3">
+  <div class="col-3">
+    <h1>メモ</h1>
+  </div>
+  <div class="col-8">
+    <h1>Calendar</h1>
+  </div>
+  <div class="col-1 bg-black-50">
+    <a href="/logout" role="button">logout</a>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-3 text-center">
+    <div class="scroll">
+      <a class="text-secondary bor" href="/create" role="button">メモ追加</a>
+      {% for post in posts %}
+      <article class="bor">
+        <div class="mt-2"><p>タイトル名</p></div>
+        <div class="box">
+          <p>{{ post.title }}</p>
+        </div>
+        <p>メモ</p>
+        <div class="memoarea">
+          <p>{{ post.body }}</p>
+        </div>
+        <p>作成日時 :{{ post.created_at }}</p>
+        <a href="/{{ post.id }}/update" role="button">編集</a>
+        <a href="/{{ post.id }}/delete" role="button">削除</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="col-8">
+    <div id="calendar">
+      <script>
+        let calendarEl = document.getElementById('calendar')
+
+        let calendar = new FullCalendar.Calendar(calendarEl, {})
+
+        calendar.render()
+      </script>
+    </div>
+  </div>
+</div>
+{% endblock %}
